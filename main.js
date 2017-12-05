@@ -1,72 +1,85 @@
 clean(document);
 var url = "https://swapi.co/api/";
 
-function getInfo(type) {
+function getInfo(type, number) {
     var newUrl = url;
-    if (type === "person" && peopleSearch.value <= 87 && peopleSearch.value >= 1) {
-        newUrl += "people/" + peopleSearch.value + "/";
+    if (type === "person" && number <= 87 && number >= 1) {
+        newUrl += "people/" + number + "/";
         ajax(newUrl, function (resp) {
             resp = parseResponse(resp);
             modalTitle.innerText = resp.name;
-            modalBody.innerText = "Height: " + resp.height + "\n" + "Mass: " + resp.mass + "\n" + "Gender: " + resp.gender;
-            $('#modal').modal('show');
+            modalBody.innerText = "";
+            for (var x in resp){
+              modalBody.innerText += x + ": " + resp[x] + "\n";
+            }
+            $('#modal').modal('show');           
         });
     }
-    if (type === "planet" && planetSearch.value <= 61 && planetSearch.value >= 1) {
-        newUrl += "planets/" + planetSearch.value + "/";
+    if (type === "planet" && number <= 61 && number >= 1) {
+        newUrl += "planets/" + number + "/";
         ajax(newUrl, function (resp) {
             resp = parseResponse(resp);
             modalTitle.innerText = resp.name;
-            modalBody.innerText = "Rotation Period: " + resp.rotation_period + "\n" + "Climate: " + resp.climate + "\n" + "Diameter: " + resp.diameter + "\n" + "Population: " + resp.population + "\n" + "Terrain: " + resp.terrain;
-            $('#modal').modal('show');
+            modalBody.innerText = "";
+            for (var x in resp){
+              modalBody.innerText += x + ": " + resp[x] + "\n";
+            }
+            $('#modal').modal('show');   
         });
     }
-    if (type === "film" && filmSearch.value <= 7 && filmSearch.value >= 1) {
-        newUrl += "films/" + filmSearch.value + "/";
+    if (type === "film" && number <= 7 && number >= 1) {
+        newUrl += "films/" + number + "/";
         ajax(newUrl, function (resp) {
             resp = parseResponse(resp);
             modalTitle.innerText = resp.title;
-            modalBody.innerText = "Director: " + resp.director + "\n" + "Producer: " + resp.producer + "\n" + "Episode ID: " + resp.episode_id + "\n" + "Release Date: " + resp.release_date;
-            $('#modal').modal('show');
+            modalBody.innerText = "";
+            for (var x in resp){
+              modalBody.innerText += x + ": " + resp[x] + "\n";
+            }
+            $('#modal').modal('show');   
         });
     }
-    if (type === "species" && speciesSearch.value <= 37 && speciesSearch.value >= 1) {
-        newUrl += "species/" + speciesSearch.value + "/";
+    if (type === "species" && number <= 37 && number >= 1) {
+        newUrl += "species/" + number + "/";
         ajax(newUrl, function (resp) {
             resp = parseResponse(resp);
             modalTitle.innerText = resp.name;
-            modalBody.innerText = "Classification: " + resp.classification + "\n" + "Designation: " + resp.designation + "\n" + "Average Height: " + resp.average_height + "\n" + "Eye Colors: " + resp.eye_colors + "\n" + "Hair Colors: " + resp.hair_colors + "\n" + "Skin Colors: " + resp.skin_colors + "\n" + "Language: " + resp.language;
-            $('#modal').modal('show');
+            modalBody.innerText = "";
+            for (var x in resp){
+              modalBody.innerText += x + ": " + resp[x] + "\n";
+            }
+            $('#modal').modal('show');   
         });
     }
-    if (type === "vehicle" && vehicleSearch.value <= 39 && vehicleSearch.value >= 1) {
-        newUrl += "vehicles/" + vehicleSearch.value + "/";
+    if (type === "vehicle" && number <= 39 && number >= 1) {
+        newUrl += "vehicles/" + number + "/";
         ajax(newUrl, function (resp) {
             resp = parseResponse(resp);
             modalTitle.innerText = resp.name;
-            modalBody.innerText = "Class: " + resp.vehicle_class + "\n" + "Model: " + resp.model + "\n" + "Max Atmosphering Speed: " + resp.max_atmosphering_speed + "\n" + "Length: " + resp.length + "\n" + "Passengers: " + resp.passengers + "\n" + "Crew: " + resp.crew + "\n" + "Manufacturer: " + resp.manufacturer;
-            $('#modal').modal('show');
+            modalBody.innerText = "";
+            for (var x in resp){
+              modalBody.innerText += x + ": " + resp[x] + "\n";
+            }
+            $('#modal').modal('show');   
         });
     }
-    if (type === "starship" && starshipSearch.value <= 37 && starshipSearch.value >= 1) {
-        newUrl += "starships/" + starshipSearch.value + "/";
+    if (type === "starship" && number <= 37 && number >= 1) {
+        newUrl += "starships/" + number + "/";
         ajax(newUrl, function (resp) {
             resp = parseResponse(resp);
             modalTitle.innerText = resp.name;
-            modalBody.innerText = "Class: " + resp.starship_class + "\n" + "Model: " + resp.model + "\n" + "Max Atmosphering Speed: " + resp.max_atmosphering_speed + "\n" + "Length: " + resp.length + "\n" + "Passengers: " + resp.passengers + "\n" + "Crew: " + resp.crew + "\n" + "Manufacturer: " + resp.manufacturer;
-            $('#modal').modal('show');
+            modalBody.innerText = "";
+            for (var x in resp){
+              modalBody.innerText += x + ": " + resp[x] + "\n";
+            }
+            $('#modal').modal('show');   
         });
     }
 }
 
-function getRandomNumber(max) {
+function getRandomInfo(max, type) {
     var randomNumber = Math.floor((Math.random() * max) + 1);
-    return randomNumber;
- }
-
- function randomPerson() {
-    peopleSearch.value = getRandomNumber(87);
-    getInfo("person")
+    getInfo(type, randomNumber);
  }
 
 function clean(node) {

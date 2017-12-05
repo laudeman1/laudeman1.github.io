@@ -16,7 +16,6 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: scroll;
-    background-position: center center;
     min-height: 1080px;
 }
 
@@ -60,4 +59,8 @@ h2 {
     padding: 25px 25px 25px 25px;
     width: 50%;
     float: left;
+}
+.modal-body{
+    text-overflow: ellipsis;
+    overflow: hidden;
 }

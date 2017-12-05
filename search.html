@@ -107,27 +107,27 @@
         var starshipSearch = document.getElementById('starshipSearch');
 
         peopleSearch.nextSibling.addEventListener('click', function () {
-            getInfo("person");
+            getInfo("person", peopleSearch.value);
         });
 
         planetSearch.nextSibling.addEventListener('click', function () {
-            getInfo("planet");
+            getInfo("planet",  planetSearch.value);
         });
 
         filmSearch.nextSibling.addEventListener('click', function () {
-            getInfo("film");
+            getInfo("film", filmSearch.value);
         });
 
         speciesSearch.nextSibling.addEventListener('click', function () {
-            getInfo("species");
+            getInfo("species", speciesSearch.value);
         });
 
         vehicleSearch.nextSibling.addEventListener('click', function () {
-            getInfo("vehicle");
+            getInfo("vehicle", vehicleSearch.value);
         });
 
         starshipSearch.nextSibling.addEventListener('click', function () {
-            getInfo("starship");
+            getInfo("starship", starshipSearch.value);
         });
     </script>
 </body>

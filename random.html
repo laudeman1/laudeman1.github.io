@@ -37,6 +37,24 @@
             <button type="button" class="btn btn-secondary" id="starshipButton">Starship</button>
         </div>
     </div>
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="modalBody">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <footer>
         <div class="container-fluid">
             <p>mfdsdmlsa</p>
@@ -52,15 +70,25 @@
     <script src="parse-response.js"></script>
     <script src="ajax.js"></script>
     <script>
-        document.getElementById('personButton').addEventListener('click', randomPerson);
+        var modalTitle = document.getElementById('modalLabel');
+        var modalContent = document.getElementById('modalTitle');
         document.getElementById('personButton').addEventListener('click', function () {
-
+            getRandomInfo(87, "person");
         });
-        document.getElementById('personButton').addEventListener('click', function () {
-
+        document.getElementById('planetButton').addEventListener('click', function () {
+            getRandomInfo(61, "planet");
         });
-        document.getElementById('personButton').addEventListener('click', function () {
-
+        document.getElementById('filmButton').addEventListener('click', function () {
+            getRandomInfo(7, "film");
+        });
+        document.getElementById('speciesButton').addEventListener('click', function () {
+            getRandomInfo(37, "species");
+        });
+        document.getElementById('vehicleButton').addEventListener('click', function () {
+            getRandomInfo(39, "vehicle");
+        });
+        document.getElementById('starshipButton').addEventListener('click', function () {
+            getRandomInfo(37, "starship");
         });
     </script>
 </body>
