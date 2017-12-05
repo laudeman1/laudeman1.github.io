@@ -9,10 +9,10 @@ function getInfo(type, number) {
             resp = parseResponse(resp);
             modalTitle.innerText = resp.name;
             modalBody.innerText = "";
-            for (var x in resp){
-              modalBody.innerText += x + ": " + resp[x] + "\n";
+            for (var x in resp) {
+                modalBody.innerText += x + ": " + resp[x] + "\n";
             }
-            $('#modal').modal('show');           
+            $('#modal').modal('show');
         });
     }
     if (type === "planet" && number <= 61 && number >= 1) {
@@ -21,10 +21,10 @@ function getInfo(type, number) {
             resp = parseResponse(resp);
             modalTitle.innerText = resp.name;
             modalBody.innerText = "";
-            for (var x in resp){
-              modalBody.innerText += x + ": " + resp[x] + "\n";
+            for (var x in resp) {
+                modalBody.innerText += x + ": " + resp[x] + "\n";
             }
-            $('#modal').modal('show');   
+            $('#modal').modal('show');
         });
     }
     if (type === "film" && number <= 7 && number >= 1) {
@@ -33,10 +33,10 @@ function getInfo(type, number) {
             resp = parseResponse(resp);
             modalTitle.innerText = resp.title;
             modalBody.innerText = "";
-            for (var x in resp){
-              modalBody.innerText += x + ": " + resp[x] + "\n";
+            for (var x in resp) {
+                modalBody.innerText += x + ": " + resp[x] + "\n";
             }
-            $('#modal').modal('show');   
+            $('#modal').modal('show');
         });
     }
     if (type === "species" && number <= 37 && number >= 1) {
@@ -45,10 +45,10 @@ function getInfo(type, number) {
             resp = parseResponse(resp);
             modalTitle.innerText = resp.name;
             modalBody.innerText = "";
-            for (var x in resp){
-              modalBody.innerText += x + ": " + resp[x] + "\n";
+            for (var x in resp) {
+                modalBody.innerText += x + ": " + resp[x] + "\n";
             }
-            $('#modal').modal('show');   
+            $('#modal').modal('show');
         });
     }
     if (type === "vehicle" && number <= 39 && number >= 1) {
@@ -57,10 +57,10 @@ function getInfo(type, number) {
             resp = parseResponse(resp);
             modalTitle.innerText = resp.name;
             modalBody.innerText = "";
-            for (var x in resp){
-              modalBody.innerText += x + ": " + resp[x] + "\n";
+            for (var x in resp) {
+                modalBody.innerText += x + ": " + resp[x] + "\n";
             }
-            $('#modal').modal('show');   
+            $('#modal').modal('show');
         });
     }
     if (type === "starship" && number <= 37 && number >= 1) {
@@ -69,10 +69,10 @@ function getInfo(type, number) {
             resp = parseResponse(resp);
             modalTitle.innerText = resp.name;
             modalBody.innerText = "";
-            for (var x in resp){
-              modalBody.innerText += x + ": " + resp[x] + "\n";
+            for (var x in resp) {
+                modalBody.innerText += x + ": " + resp[x] + "\n";
             }
-            $('#modal').modal('show');   
+            $('#modal').modal('show');
         });
     }
 }
@@ -80,7 +80,7 @@ function getInfo(type, number) {
 function getRandomInfo(max, type) {
     var randomNumber = Math.floor((Math.random() * max) + 1);
     getInfo(type, randomNumber);
- }
+}
 
 function clean(node) {
     for (var n = 0; n < node.childNodes.length; n++) {

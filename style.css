@@ -62,7 +62,8 @@ h2 {
     width: 50%;
     float: left;
 }
-.modal-body{
+
+.modal-body {
     text-overflow: ellipsis;
     overflow: hidden;
 }
