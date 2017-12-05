@@ -1,0 +1,63 @@
+body {
+    background-color: #252525;
+    font-family: Arial;
+}
+
+.navbar-brand {
+    font-size: 3em;
+}
+
+.nav-item {
+    font-size: 1.5em;
+}
+
+.jumbotron {
+    background-image: url("http://cdn.wonderfulengineering.com/wp-content/uploads/2014/09/star-wars-wallpaper-4.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    min-height: 1080px;
+}
+
+.form-group {
+    font-size: 2em;
+    color: white;
+    padding: 0px 0px 25px 0px;
+}
+
+.jumbotron .col {
+    background-color: #252525;
+    padding: 100px;
+    border-radius: 25px;
+}
+
+.btn-primary {
+    float: right;
+    position: relative;
+    top: 20px;
+}
+
+.col h1,
+.col p {
+    color: white;
+}
+
+.container-fluid .btn-secondary {
+    margin: 0px 0px 30px 0px;
+    font-size: 2em;
+    display: flex;
+}
+
+h2 {
+    color: white;
+    padding: 0px 0px 50px 0px;
+}
+
+.container-fluid {
+    background-color: #252525;
+    border-radius: 25px;
+    padding: 25px 25px 25px 25px;
+    width: 50%;
+    float: left;
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWDB</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Star Wars Database</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link" href="index.html">Home</a>
+                <a class="nav-item nav-link" href="about.html">About</a>
+                <a class="nav-item nav-link active" href="search.html">Search</a>
+                <a class="nav-item nav-link" href="random.html">Random</a>
+
+            </div>
+        </div>
+    </nav>
+    <div class="jumbotron">
+        <div class="container">
+            <div class="col">
+                <form>
+                    <div class="form-group">
+                        <label for="peopleSearch">People</label>
+                        <input type="number" step="1" class="form-control" id="peopleSearch" placeholder="Number from 1-87" min="1" max="87">
+                        <input type="button" value="Submit" class="btn btn-primary">
+                    </div>
+                    <div class="form-group">
+                        <label for="planetSearch">Planets</label>
+                        <input type="number" step="1" class="form-control" id="planetSearch" placeholder="Number from 1-61" min="1" max="61">
+                        <input type="button" value="Submit" class="btn btn-primary">
+                    </div>
+                    <div class="form-group">
+                        <label for="filmSearch">Films</label>
+                        <input type="number" step="1" class="form-control" id="filmSearch" placeholder="Number from 1-7" min="1" max="7">
+                        <input type="button" value="Submit" class="btn btn-primary">
+                    </div>
+                    <div class="form-group">
+                        <label for="speciesSearch">Species</label>
+                        <input type="number" step="1" class="form-control" id="speciesSearch" placeholder="Number from 1-37" min="1" max="37">
+                        <input type="button" value="Submit" class="btn btn-primary">
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicleSearch">Vehicles</label>
+                        <input type="number" step="1" class="form-control" id="vehicleSearch" placeholder="Number from 1-39" min="1" max="39">
+                        <input type="button" value="Submit" class="btn btn-primary">
+                    </div>
+                    <div class="form-group">
+                        <label for="starshipSearch">Starships</label>
+                        <input type="number" step="1" class="form-control" id="starshipSearch" placeholder="Number from 1-37" min="1" max="37">
+                        <input type="button" value="Submit" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="modalBody">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container-fluid">
+            <p>mfdsdmlsa</p>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+    <script src="parse-response.js"></script>
+    <script src="ajax.js"></script>
+    <script>
+        var modalTitle = document.getElementById('modalLabel');
+        var modalContent = document.getElementById('modalTitle');
+        var peopleSearch = document.getElementById('peopleSearch');
+        var planetSearch = document.getElementById('planetSearch');
+        var filmSearch = document.getElementById('filmSearch');
+        var speciesSearch = document.getElementById('speciesSearch');
+        var vehicleSearch = document.getElementById('vehicleSearch');
+        var starshipSearch = document.getElementById('starshipSearch');
+
+        peopleSearch.nextSibling.addEventListener('click', function () {
+            getInfo("person");
+        });
+
+        planetSearch.nextSibling.addEventListener('click', function () {
+            getInfo("planet");
+        });
+
+        filmSearch.nextSibling.addEventListener('click', function () {
+            getInfo("film");
+        });
+
+        speciesSearch.nextSibling.addEventListener('click', function () {
+            getInfo("species");
+        });
+
+        vehicleSearch.nextSibling.addEventListener('click', function () {
+            getInfo("vehicle");
+        });
+
+        starshipSearch.nextSibling.addEventListener('click', function () {
+            getInfo("starship");
+        });
+    </script>
+</body>
+
+</html>
