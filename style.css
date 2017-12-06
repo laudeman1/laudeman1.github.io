@@ -3,13 +3,15 @@ body {
     font-family: Arial;
 }
 
-.navbar-brand {
-    font-size: 2.5em;
-    color: white !important;
+.navbar-brand img{
+    width: 220px;
+    height: 150px;
+    position: relative;
+    top: 10px;
 }
 
 .nav-item {
-    font-size: 1.5em;
+    font-size: 3em;
 }
 
 .jumbotron {
@@ -55,7 +57,7 @@ h2 {
     padding: 0px 0px 50px 0px;
 }
 
-.container-fluid {
+.jumbotron .container-fluid {
     background-color: #252525;
     border-radius: 25px;
     padding: 25px 25px 25px 25px;
@@ -66,4 +68,9 @@ h2 {
 .modal-body {
     text-overflow: ellipsis;
     overflow: hidden;
+}
+
+footer {
+    color: white;
+
 }

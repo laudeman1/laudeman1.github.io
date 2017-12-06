@@ -77,6 +77,29 @@ function getInfo(type, number) {
     }
 }
 
+function getSearch(type, id) {
+    var newUrl = url;
+    if (type === "person") {
+        
+    }
+    if (type === "planet") {
+        
+    }
+    if (type === "film") {
+        
+    }
+    if (type === "species") {
+        
+    }
+    if (type === "vehicle") {
+        
+    }
+    if (type === "starship") {
+        
+    }
+    
+}
+
 function getRandomInfo(max, type) {
     var randomNumber = Math.floor((Math.random() * max) + 1);
     getInfo(type, randomNumber);
