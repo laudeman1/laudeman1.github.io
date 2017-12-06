@@ -3,7 +3,7 @@ body {
     font-family: Arial;
 }
 
-.navbar-brand img{
+.navbar-brand img {
     width: 220px;
     height: 150px;
     position: relative;
@@ -72,5 +72,4 @@ h2 {
 
 footer {
     color: white;
-
 }
