@@ -80,6 +80,11 @@ function getInfo(type, number) {
 function getSearch(type, id) {
     var newUrl = url;
     newUrl += type + "/?search=" + id;
+    modalBody.innerText = "";
+    for (var x in resp) {
+        modalBody.innerText += x + ": " + resp[x] + "\n";
+    }
+    $('#modal').modal('show');
 }
 
 function getRandomInfo(max, type) {
