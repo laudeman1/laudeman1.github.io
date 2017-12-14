@@ -42,12 +42,6 @@
     <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalLabel">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
                 <div class="modal-body" id="modalBody">
                     ...
                 </div>
@@ -72,25 +66,23 @@
     <script src="js/parse-response.js"></script>
     <script src="js/ajax.js"></script>
     <script>
-        var modalTitle = document.getElementById('modalLabel');
-        var modalContent = document.getElementById('modalTitle');
         document.getElementById('personButton').addEventListener('click', function () {
-            getRandomInfo(87, "person");
+            getRandomInfo(87, "people");
         });
         document.getElementById('planetButton').addEventListener('click', function () {
-            getRandomInfo(61, "planet");
+            getRandomInfo(61, "planets");
         });
         document.getElementById('filmButton').addEventListener('click', function () {
-            getRandomInfo(7, "film");
+            getRandomInfo(7, "films");
         });
         document.getElementById('speciesButton').addEventListener('click', function () {
             getRandomInfo(37, "species");
         });
         document.getElementById('vehicleButton').addEventListener('click', function () {
-            getRandomInfo(39, "vehicle");
+            getRandomInfo(39, "vehicles");
         });
         document.getElementById('starshipButton').addEventListener('click', function () {
-            getRandomInfo(37, "starship");
+            getRandomInfo(37, "starships");
         });
     </script>
 </body>

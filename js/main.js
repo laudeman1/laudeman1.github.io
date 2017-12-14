@@ -3,88 +3,28 @@ var url = "https://swapi.co/api/";
 
 function getInfo(type, number) {
     var newUrl = url;
-    if (type === "person") {
-        newUrl += "people/" + number + "/";
-        ajax(newUrl, function (resp) {
-            resp = parseResponse(resp);
-            modalTitle.innerText = resp.name;
-            modalBody.innerText = "";
-            for (var x in resp) {
-                modalBody.innerText += x + ": " + resp[x] + "\n";
-            }
-            $('#modal').modal('show');
-        });
-    }
-    if (type === "planet") {
-        newUrl += "planets/" + number + "/";
-        ajax(newUrl, function (resp) {
-            resp = parseResponse(resp);
-            modalTitle.innerText = resp.name;
-            modalBody.innerText = "";
-            for (var x in resp) {
-                modalBody.innerText += x + ": " + resp[x] + "\n";
-            }
-            $('#modal').modal('show');
-        });
-    }
-    if (type === "film") {
-        newUrl += "films/" + number + "/";
-        ajax(newUrl, function (resp) {
-            resp = parseResponse(resp);
-            modalTitle.innerText = resp.title;
-            modalBody.innerText = "";
-            for (var x in resp) {
-                modalBody.innerText += x + ": " + resp[x] + "\n";
-            }
-            $('#modal').modal('show');
-        });
-    }
-    if (type === "species") {
-        newUrl += "species/" + number + "/";
-        ajax(newUrl, function (resp) {
-            resp = parseResponse(resp);
-            modalTitle.innerText = resp.name;
-            modalBody.innerText = "";
-            for (var x in resp) {
-                modalBody.innerText += x + ": " + resp[x] + "\n";
-            }
-            $('#modal').modal('show');
-        });
-    }
-    if (type === "vehicle") {
-        newUrl += "vehicles/" + number + "/";
-        ajax(newUrl, function (resp) {
-            resp = parseResponse(resp);
-            modalTitle.innerText = resp.name;
-            modalBody.innerText = "";
-            for (var x in resp) {
-                modalBody.innerText += x + ": " + resp[x] + "\n";
-            }
-            $('#modal').modal('show');
-        });
-    }
-    if (type === "starship") {
-        newUrl += "starships/" + number + "/";
-        ajax(newUrl, function (resp) {
-            resp = parseResponse(resp);
-            modalTitle.innerText = resp.name;
-            modalBody.innerText = "";
-            for (var x in resp) {
-                modalBody.innerText += x + ": " + resp[x] + "\n";
-            }
-            $('#modal').modal('show');
-        });
-    }
+    newUrl += type + "/" + number + "/";
+    ajax(newUrl, function (resp) {
+        resp = parseResponse(resp);
+        modalBody.innerText = "";
+        for (var x in resp) {
+            modalBody.innerText += x + ": " + resp[x] + "\n";
+        }
+        $('#modal').modal('show');
+    });
 }
 
 function getSearch(type, id) {
     var newUrl = url;
     newUrl += type + "/?search=" + id;
-    modalBody.innerText = "";
-    for (var x in resp) {
-        modalBody.innerText += x + ": " + resp[x] + "\n";
-    }
-    $('#modal').modal('show');
+    ajax(newUrl, function (resp) {
+        resp = parseResponse(resp);
+        modalBody.innerText = "";
+        for (var x in resp.results[0]) {
+            modalBody.innerText += x + ": " + resp.results[0][x] + "\n";
+        }
+        $('#modal').modal('show');
+    });
 }
 
 function getRandomInfo(max, type) {
