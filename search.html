@@ -34,32 +34,33 @@
                 <form>
                     <div class="form-group">
                         <label for="peopleSearch">People</label>
-                        <input type="number" step="1" class="form-control" id="peopleSearch" placeholder="Number from 1-87" min="1" max="87">
+                        <input type="text" class="form-control" id="peopleSearch">
+                        input
                         <input type="button" value="Submit" class="btn btn-primary">
                     </div>
                     <div class="form-group">
                         <label for="planetSearch">Planets</label>
-                        <input type="number" step="1" class="form-control" id="planetSearch" placeholder="Number from 1-61" min="1" max="61">
+                        <input type="text" class="form-control" id="planetSearch">
                         <input type="button" value="Submit" class="btn btn-primary">
                     </div>
                     <div class="form-group">
                         <label for="filmSearch">Films</label>
-                        <input type="number" step="1" class="form-control" id="filmSearch" placeholder="Number from 1-7" min="1" max="7">
+                        <input type="text" class="form-control" id="filmSearch">
                         <input type="button" value="Submit" class="btn btn-primary">
                     </div>
                     <div class="form-group">
                         <label for="speciesSearch">Species</label>
-                        <input type="number" step="1" class="form-control" id="speciesSearch" placeholder="Number from 1-37" min="1" max="37">
+                        <input type="text" class="form-control" id="speciesSearch">
                         <input type="button" value="Submit" class="btn btn-primary">
                     </div>
                     <div class="form-group">
                         <label for="vehicleSearch">Vehicles</label>
-                        <input type="number" step="1" class="form-control" id="vehicleSearch" placeholder="Number from 1-39" min="1" max="39">
+                        <input type="text" class="form-control" id="vehicleSearch">
                         <input type="button" value="Submit" class="btn btn-primary">
                     </div>
                     <div class="form-group">
                         <label for="starshipSearch">Starships</label>
-                        <input type="number" step="1" class="form-control" id="starshipSearch" placeholder="Number from 1-37" min="1" max="37">
+                        <input type="text" class="form-control" id="starshipSearch">
                         <input type="button" value="Submit" class="btn btn-primary">
                     </div>
                 </form>
@@ -109,27 +110,27 @@
         var starshipSearch = document.getElementById('starshipSearch');
 
         peopleSearch.nextSibling.addEventListener('click', function () {
-            getInfo("person", peopleSearch.value);
+            getSearch("person", peopleSearch.value);
         });
 
         planetSearch.nextSibling.addEventListener('click', function () {
-            getInfo("planet", planetSearch.value);
+            getSearch("planet", planetSearch.value);
         });
 
         filmSearch.nextSibling.addEventListener('click', function () {
-            getInfo("film", filmSearch.value);
+            getSearch("film", filmSearch.value);
         });
 
         speciesSearch.nextSibling.addEventListener('click', function () {
-            getInfo("species", speciesSearch.value);
+            getSearch("species", speciesSearch.value);
         });
 
         vehicleSearch.nextSibling.addEventListener('click', function () {
-            getInfo("vehicle", vehicleSearch.value);
+            getSearch("vehicle", vehicleSearch.value);
         });
 
         starshipSearch.nextSibling.addEventListener('click', function () {
-            getInfo("starship", starshipSearch.value);
+            getSearch("starship", starshipSearch.value);
         });
     </script>
 </body>

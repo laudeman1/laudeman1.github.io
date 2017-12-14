@@ -3,7 +3,7 @@ var url = "https://swapi.co/api/";
 
 function getInfo(type, number) {
     var newUrl = url;
-    if (type === "person" && number <= 87 && number >= 1) {
+    if (type === "person") {
         newUrl += "people/" + number + "/";
         ajax(newUrl, function (resp) {
             resp = parseResponse(resp);
@@ -15,7 +15,7 @@ function getInfo(type, number) {
             $('#modal').modal('show');
         });
     }
-    if (type === "planet" && number <= 61 && number >= 1) {
+    if (type === "planet") {
         newUrl += "planets/" + number + "/";
         ajax(newUrl, function (resp) {
             resp = parseResponse(resp);
@@ -27,7 +27,7 @@ function getInfo(type, number) {
             $('#modal').modal('show');
         });
     }
-    if (type === "film" && number <= 7 && number >= 1) {
+    if (type === "film") {
         newUrl += "films/" + number + "/";
         ajax(newUrl, function (resp) {
             resp = parseResponse(resp);
@@ -39,7 +39,7 @@ function getInfo(type, number) {
             $('#modal').modal('show');
         });
     }
-    if (type === "species" && number <= 37 && number >= 1) {
+    if (type === "species") {
         newUrl += "species/" + number + "/";
         ajax(newUrl, function (resp) {
             resp = parseResponse(resp);
@@ -51,7 +51,7 @@ function getInfo(type, number) {
             $('#modal').modal('show');
         });
     }
-    if (type === "vehicle" && number <= 39 && number >= 1) {
+    if (type === "vehicle") {
         newUrl += "vehicles/" + number + "/";
         ajax(newUrl, function (resp) {
             resp = parseResponse(resp);
@@ -63,7 +63,7 @@ function getInfo(type, number) {
             $('#modal').modal('show');
         });
     }
-    if (type === "starship" && number <= 37 && number >= 1) {
+    if (type === "starship") {
         newUrl += "starships/" + number + "/";
         ajax(newUrl, function (resp) {
             resp = parseResponse(resp);
@@ -79,25 +79,7 @@ function getInfo(type, number) {
 
 function getSearch(type, id) {
     var newUrl = url;
-    if (type === "person") {
-
-    }
-    if (type === "planet") {
-
-    }
-    if (type === "film") {
-
-    }
-    if (type === "species") {
-
-    }
-    if (type === "vehicle") {
-
-    }
-    if (type === "starship") {
-
-    }
-
+    newUrl += type + "/?search=" + id;
 }
 
 function getRandomInfo(max, type) {
